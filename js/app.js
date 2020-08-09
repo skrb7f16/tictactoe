@@ -33,16 +33,16 @@ function game(id) {
         square.innerText = "X"
         moves+=1
         changeCurrentPlayer('O')
-        winCheck(player);
         player=2
+        winCheck('X');
     }
     else if (player == 2 && square.innerText == "") {
         square.style.backgroundColor = "Yellow";
         square.innerText = "O"
         moves+=1
         changeCurrentPlayer('X')
-        winCheck(player);
         player=1
+        winCheck('O');
     }
     else{
         alert("wrong move")
@@ -76,8 +76,9 @@ function resetGame(){
     for(i=0;i<=8;i++){
         sqaures.byId[i].innerText=''
         sqaures.byId[i].style.backgroundColor='blue'
-        currentPlayer.innerText=`Current Player: X`
     }
+    currentPlayer.innerText=`Current Player: X`
+    player=1
 }
 
 function changeCurrentPlayer(s){
