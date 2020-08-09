@@ -32,17 +32,17 @@ function game(id) {
         square.style.backgroundColor = "green";
         square.innerText = "X"
         moves+=1
-        winCheck(player);
         player=2
         changeCurrentPlayer('O')
+        winCheck(player);
     }
     else if (player == 2 && square.innerText == "") {
         square.style.backgroundColor = "Yellow";
         square.innerText = "O"
         moves+=1
-        winCheck(player);
         player=1
         changeCurrentPlayer('X')
+        winCheck(player);
     }
     else{
         alert("wrong move")
